@@ -1,0 +1,12 @@
+Usage: templado [options] <src> <assets> <target>
+
+  <src>            Directory containing HTML files
+  <assets>         Directory containing assets to be applied on HTML files found in <src>
+
+  <target>         Output directory for the result
+
+  -h, --help       Prints this usage information and exits
+  -v, --version    Prints the version and exits
+  -s, --silent     Do not print any output
+  -c, --clean      Remove all files from target directory before starting to process
+
