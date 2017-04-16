@@ -31,7 +31,7 @@
  * POSSIBILITY OF SUCH DAMAGE.
  *
  */
-namespace TheSeer\Templado\Cli;
+namespace Templado\Cli;
 
 if (!defined('HHVM_VERSION') && (version_compare(phpversion(), '7.0', 'lt'))) {
     fwrite(

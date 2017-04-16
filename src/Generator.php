@@ -1,11 +1,11 @@
 <?php declare(strict_types = 1);
-namespace TheSeer\Templado\Cli;
+namespace Templado\Cli;
 
-use TheSeer\Templado\AssetListCollection;
-use TheSeer\Templado\AssetLoader;
-use TheSeer\Templado\AssetLoaderException;
-use TheSeer\Templado\FileName;
-use TheSeer\Templado\Templado;
+use Templado\Engine\AssetListCollection;
+use Templado\Engine\AssetLoader;
+use Templado\Engine\AssetLoaderException;
+use Templado\Engine\FileName;
+use Templado\Engine\Templado;
 
 class Generator {
 

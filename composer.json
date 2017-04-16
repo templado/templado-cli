@@ -1,5 +1,5 @@
 {
-  "name" : "theseer/templado-cli",
+  "name" : "templado/cli",
   "description" : "CLI tools for Templado",
   "license" : "BSD-3-Clause",
   "authors" : [
@@ -10,12 +10,12 @@
     }
   ],
   "support" : {
-    "issues" : "https://github.com/theseer/templado-cli/issues"
+    "issues" : "https://github.com/templado/cli/issues"
   },
   "require" : {
     "php" : "^7.0",
     "ext-dom" : "*",
-    "theseer/templado": "^1.0"
+    "templado/engine": "^1.0"
   },
   "autoload": {
     "classmap": [

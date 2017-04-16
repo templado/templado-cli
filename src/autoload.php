@@ -7,21 +7,21 @@ spl_autoload_register(
         static $classes = null;
         if ($classes === null) {
             $classes = array(
-                'theseer\\templado\\cli\\directory' => '/Directory.php',
-                'theseer\\templado\\cli\\directoryexception' => '/DirectoryException.php',
-                'theseer\\templado\\cli\\exception' => '/Exception.php',
-                'theseer\\templado\\cli\\factory' => '/Factory.php',
-                'theseer\\templado\\cli\\generator' => '/Generator.php',
-                'theseer\\templado\\cli\\generatorconfig' => '/GeneratorConfig.php',
-                'theseer\\templado\\cli\\gitversion' => '/version/GitVersion.php',
-                'theseer\\templado\\cli\\logger' => '/logger/Logger.php',
-                'theseer\\templado\\cli\\request' => '/Request.php',
-                'theseer\\templado\\cli\\requestexception' => '/RequestException.php',
-                'theseer\\templado\\cli\\runner' => '/Runner.php',
-                'theseer\\templado\\cli\\silentlogger' => '/logger/SilentLogger.php',
-                'theseer\\templado\\cli\\staticversion' => '/version/StaticVersion.php',
-                'theseer\\templado\\cli\\verboselogger' => '/logger/VerboseLogger.php',
-                'theseer\\templado\\cli\\version' => '/version/Version.php'
+                'templado\\cli\\directory' => '/Directory.php',
+                'templado\\cli\\directoryexception' => '/DirectoryException.php',
+                'templado\\cli\\exception' => '/Exception.php',
+                'templado\\cli\\factory' => '/Factory.php',
+                'templado\\cli\\generator' => '/Generator.php',
+                'templado\\cli\\generatorconfig' => '/GeneratorConfig.php',
+                'templado\\cli\\gitversion' => '/version/GitVersion.php',
+                'templado\\cli\\logger' => '/logger/Logger.php',
+                'templado\\cli\\request' => '/Request.php',
+                'templado\\cli\\requestexception' => '/RequestException.php',
+                'templado\\cli\\runner' => '/Runner.php',
+                'templado\\cli\\silentlogger' => '/logger/SilentLogger.php',
+                'templado\\cli\\staticversion' => '/version/StaticVersion.php',
+                'templado\\cli\\verboselogger' => '/logger/VerboseLogger.php',
+                'templado\\cli\\version' => '/version/Version.php'
             );
         }
         $cn = strtolower($class);
