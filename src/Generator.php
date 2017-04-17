@@ -83,9 +83,13 @@ class Generator {
 
             try {
                 $assets->addAsset($loader->load(new FileName($file->getRealPath())));
-                $this->logger->log('🗸 ' . $file->getPathname());
+                $this->logger->log(
+                    sprintf('🗸 %s', $file->getPathname())
+                );
             } catch (AssetLoaderException $e) {
-                $this->logger->log('🗴 ' . $e->getMessage());
+                $this->logger->log(
+                    sprintf('🗴 %s: %s',  $file->getPathname(), $e->getMessage())
+                );
             }
         }
 
