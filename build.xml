@@ -132,7 +132,7 @@
             <arg value="--basedir" />
             <arg path="${basedir}" />
             <arg path="${source}" />
-            <arg path="${basedir}/conf" />
+            <arg path="${basedir}/vendor/templado/engine/src" />
         </exec>
 
         <chmod file="${basedir}/build/phar/templado-${version}.phar" perm="ugo+rx"/>
