@@ -4,24 +4,25 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "content-hash": "7f39dc87e5989bb0cd7f4ca7d7640ccb",
+    "content-hash": "57e6225f3c26c395918d776ec80a3dab",
     "packages": [
         {
-            "name": "theseer/templado",
-            "version": "1.0.0",
+            "name": "templado/engine",
+            "version": "2.0.0",
             "source": {
                 "type": "git",
-                "url": "https://github.com/theseer/templado.git",
-                "reference": "c6f64ebc7e81da7ebb40518076e10fe93f3d6611"
+                "url": "https://github.com/templado/engine.git",
+                "reference": "d45b070713673481a1f2670cc98dd020ed661c9c"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/theseer/templado/zipball/c6f64ebc7e81da7ebb40518076e10fe93f3d6611",
-                "reference": "c6f64ebc7e81da7ebb40518076e10fe93f3d6611",
+                "url": "https://api.github.com/repos/templado/engine/zipball/d45b070713673481a1f2670cc98dd020ed661c9c",
+                "reference": "d45b070713673481a1f2670cc98dd020ed661c9c",
                 "shasum": ""
             },
             "require": {
                 "ext-dom": "*",
+                "ext-libxml": "*",
                 "php": "^7.0"
             },
             "type": "library",
@@ -42,7 +43,7 @@
                 }
             ],
             "description": "A pragmatic approach to templating for PHP 7.x",
-            "time": "2017-02-17T12:04:55+00:00"
+            "time": "2017-08-02T20:44:41+00:00"
         }
     ],
     "packages-dev": [],

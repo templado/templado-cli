@@ -53,7 +53,7 @@ class Request {
         return new Directory($this->arguments[0]);
     }
 
-    public function getAssetDirectory(): Directory {
+    public function getSnippetDirectory(): Directory {
         $this->parse();
 
         return new Directory($this->arguments[1]);

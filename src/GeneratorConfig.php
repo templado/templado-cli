@@ -16,8 +16,8 @@ class GeneratorConfig {
         return $this->request->getSourceDirectory();
     }
 
-    public function getAssetDirectory(): Directory {
-        return $this->request->getAssetDirectory();
+    public function getSnippetDirectory(): Directory {
+        return $this->request->getSnippetDirectory();
     }
 
     public function getTargetDirectory(): Directory {

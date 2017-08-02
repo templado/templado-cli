@@ -15,7 +15,7 @@
   "require" : {
     "php" : "^7.0",
     "ext-dom" : "*",
-    "templado/engine": "^1.1"
+    "templado/engine": "^2.0"
   },
   "autoload": {
     "classmap": [

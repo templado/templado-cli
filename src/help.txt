@@ -1,7 +1,7 @@
-Usage: templado [options] <src> <assets> <target>
+Usage: templado [options] <src> <snippets> <target>
 
   <src>            Directory containing HTML files
-  <assets>         Directory containing assets to be applied on HTML files found in <src>
+  <snippets>       Directory containing snippets to be applied on HTML files found in <src>
 
   <target>         Output directory for the result
 

@@ -1,9 +1,9 @@
 <?php declare(strict_types = 1);
 namespace Templado\Cli;
 
-use Templado\Engine\AssetListCollection;
-use Templado\Engine\AssetLoader;
-use Templado\Engine\AssetLoaderException;
+use Templado\Engine\SnippetListCollection;
+use Templado\Engine\SnippetLoader;
+use Templado\Engine\SnippetLoaderException;
 use Templado\Engine\FileName;
 use Templado\Engine\Templado;
 
@@ -17,7 +17,7 @@ class Generator {
     /**
      * @var Directory
      */
-    private $assetsDirectory;
+    private $snippetsDirectory;
 
     /**
      * @var Directory
@@ -37,14 +37,14 @@ class Generator {
     public function __construct(GeneratorConfig $config, Logger $logger) {
 
         $this->srcDirectory    = $config->getSourceDirectory();
-        $this->assetsDirectory = $config->getAssetDirectory();
+        $this->snippetsDirectory = $config->getSnippetDirectory();
         $this->targetDirectory = $config->getTargetDirectory();
         $this->clearFirst      = $config->clearFirst();
         $this->logger          = $logger;
     }
 
     public function run(): int {
-        $assets = $this->loadAssets();
+        $snippets = $this->loadSnippets();
 
         if ($this->clearFirst) {
             $this->logger->log(
@@ -62,47 +62,47 @@ class Generator {
             if (!$src->isFile()) {
                 continue;
             }
-            $this->processFile($src, $assets);
+            $this->processFile($src, $snippets);
         }
 
         return Runner::RC_OK;
     }
 
-    private function loadAssets(): AssetListCollection {
-        $assets = new AssetListCollection();
-        $loader = new AssetLoader();
+    private function loadSnippets(): SnippetListCollection {
+        $snippets = new SnippetListCollection();
+        $loader = new SnippetLoader();
 
         $this->logger->log(
-            sprintf('Loading assets from directory "%s"', $this->assetsDirectory->asString())
+            sprintf('Loading snippets from directory "%s"', $this->snippetsDirectory->asString())
         );
-        foreach($this->assetsDirectory as $file) {
+        foreach($this->snippetsDirectory as $file) {
             /** @var \SplFileInfo $file */
             if (!$file->isFile()) {
                 continue;
             }
 
             try {
-                $assets->addAsset($loader->load(new FileName($file->getRealPath())));
+                $snippets->addSnippet($loader->load(new FileName($file->getRealPath())));
                 $this->logger->log(
                     sprintf('🗸 %s', $file->getPathname())
                 );
-            } catch (AssetLoaderException $e) {
+            } catch (SnippetLoaderException $e) {
                 $this->logger->log(
                     sprintf('🗴 %s: %s',  $file->getPathname(), $e->getMessage())
                 );
             }
         }
 
-        return $assets;
+        return $snippets;
     }
 
     /**
      * @param \SplFileInfo        $src
-     * @param AssetListCollection $assets
+     * @param SnippetListCollection $snippets
      */
-    private function processFile(\SplFileInfo $src, AssetListCollection $assets) {
-        $page = Templado::loadFile(new FileName($src->getPathname()));
-        $page->applyAssets($assets);
+    private function processFile(\SplFileInfo $src, SnippetListCollection $snippets) {
+        $page = Templado::loadHtmlFile(new FileName($src->getPathname()));
+        $page->applySnippets($snippets);
         $target = $this->targetPath($src);
         @mkdir(dirname($target), 0777, true);
         file_put_contents($target, $page->asString());
